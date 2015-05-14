@@ -1,13 +1,14 @@
 #include        <cmath>    // For sqrt() .
 #include <iostream>
-
+#include        "mdprog.h"    // For gauss() xxx
 using namespace std;
 
 #define         nint(x)         (((x) > 0) ? (int)((x)+.5) : (int)((x)-.5))
 
 void langevin( int nat, double x[], double box[], double epslj, double siglj,
              double rcutf, double *epot, double f[], double *vir,
-             double rcutg, int ngr, int igr[], double gamma, double amas){
+             double rcutg, int ngr, int igr[], double gamma, double amas,
+			 double boltz, double temp0, int ig, double v[]){
 
 
 
@@ -48,6 +49,10 @@ void langevin( int nat, double x[], double box[], double epslj, double siglj,
 
         double one=1.0;
         int     m, i, j, i3, j3, n;  // Array counters
+
+		double sd			 // SD of the gaussian distr for the stochastic force xxx
+		double fri			 // friction term in the langevin equation xxx
+		double fst			 // stochastic force in the langevin equation xxx
 /*
  * initialise variables
  */
@@ -62,6 +67,7 @@ void langevin( int nat, double x[], double box[], double epslj, double siglj,
         rcutg2 = rcutg*rcutg;
         if(rcutg > 0)
                 dgr = rcutg/ngr;
+		sd = 6*amas*gamma*boltz*temp0 // xxx
 /*
  * set potential energy, virial and forces equal to zero
  */
@@ -113,6 +119,22 @@ void langevin( int nat, double x[], double box[], double epslj, double siglj,
                                 igr[n]++;
                         }
                 }
+
+/*
+ * add an atomic friction term and a stochastic force to the force from above
+ * xxx
+ */
+				for (m = 0; m < 3; m++){
+
+					fri = amas*gamma*v[i3+m];
+					f[i3+m] -= fri;
+
+					fst = gauss(0, sd, &ig);
+					f[i3+m] += fst;
+				}
+				
+
+
         }
         *vir /= 2.;
 }

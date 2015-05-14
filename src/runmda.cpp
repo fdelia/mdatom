@@ -155,7 +155,8 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
             double gamma=1;
 
             if (ntt==3)
-                langevin(nat, x, box, epslj, siglj, rcutf, &epot, f, &vir, rcutg, ngr, igr, gamma, amas);
+                langevin(nat, x, box, epslj, siglj, rcutf, &epot, f, &vir, rcutg, ngr, igr,
+				gamma, amas, boltz, temp0, ig, v);
             else   
                 forcea(nat, x, box, epslj, siglj, rcutf, &epot, f, &vir, rcutg, ngr, igr);
 

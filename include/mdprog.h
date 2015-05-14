@@ -43,7 +43,8 @@ void forcea( int nat, double x[], double box[], double epslj, double siglj,
 // langevin.cpp
 void langevin( int nat, double x[], double box[], double epslj, double siglj,
              double rcutf, double *epot, double f[], double *vir,
-             double rcutg, int ngr, int igr[], double gamma, double amas); // xxx
+             double rcutg, int ngr, int igr[], double gamma, double amas, 
+			 double boltz, double temp0, int ig, double v[]); // xxx
 
 // Draw initial velocities from a Maxwellian distribution: gauss.cpp
 double gauss ( double am, double sd, int *seed);
