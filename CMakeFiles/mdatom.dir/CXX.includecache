@@ -1,0 +1,90 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/auxiliary.cpp
+iostream
+-
+mdprog.h
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/mdprog.h
+
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/cenma.cpp
+iostream
+-
+iomanip
+-
+cstdlib
+-
+
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/confa.cpp
+mdprog.h
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/mdprog.h
+
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/forcea.cpp
+cmath
+-
+iostream
+-
+
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/gauss.cpp
+mdprog.h
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/mdprog.h
+
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/main.cpp
+iostream
+-
+fstream
+-
+iomanip
+-
+cmath
+-
+chrono
+-
+time.h
+-
+mdprog.h
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/mdprog.h
+
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/packa.cpp
+fstream
+-
+iomanip
+-
+string
+-
+sstream
+-
+cstdlib
+-
+mdprog.h
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/mdprog.h
+
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/random.cpp
+
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/runmda.cpp
+iostream
+-
+iomanip
+-
+cmath
+-
+mdprog.h
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/mdprog.h
+
+/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/src/shia.cpp
+
+include/mdprog.h
+iostream
+-
+fstream
+-
+cmath
+-
+ctime
+-
+
