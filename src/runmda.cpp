@@ -152,14 +152,14 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
 /* calculate forces, potential energy, virial
  * and contribution to the radial distribution function
  */
-            /*double gamma=1;
+            double gamma=1;
 
             if (ntt==3)
-                langevin(nax, x, box, epslj, siglj, rcutf, &epot, f, &vir, rcutg, ngr, igr, gamma, amas);
-            else*/ 
+                langevin(nat, x, box, epslj, siglj, rcutf, &epot, f, &vir, rcutg, ngr, igr, gamma, amas);
+            else   
                 forcea(nat, x, box, epslj, siglj, rcutf, &epot, f, &vir, rcutg, ngr, igr);
 
-            // 6.6.2 xxx ersetzte forcea
+            // 6.6.2 xxx ersetze forcea
 
             ener[2] = epot;
             ener[3] = vir;
@@ -210,7 +210,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
                 // collide
                 if (t_rand < tSinceColl){
                     // cout << "\n**********************\n";
-                    // cout << "collision happend at step " << nstep << " \n";
+                    // cout << "collision at step " << nstep << " \n";
 
                     int numOfColls = 1; // to implement (input)
 
@@ -234,8 +234,8 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
                         v[koord+2] = vGauss;
                     }
 
-                    lastcoll = dt*nstep;
                     collCounter++;
+                    lastcoll = dt*nstep;
                 }
             }
 
@@ -342,7 +342,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
         temp2 = enert2[1]/fac;
         cout << "\n\n AVERAGE TEMPERATURE IS :\n\n " <<  *temp << "\n";
         cout << "\n\n ROOT MEAN SQUARE FLUCTUATIONS :\n\n " << temp2 << "\n";
-        cout << "\n\n NUMBER OF COLLISIONS :\n\n" << collCounter << "\n"; // xxx
+        cout << "\n\n NUMBER OF COLLISIONS :\n\n " << collCounter << "\n"; // xxx
 }
 
 

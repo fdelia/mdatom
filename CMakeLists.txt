@@ -21,6 +21,7 @@ SET (SOURCE
 	src/packa.cpp
 	src/random.cpp
 	src/shia.cpp
+	src/langevin.cpp
 )
 
 set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11" )

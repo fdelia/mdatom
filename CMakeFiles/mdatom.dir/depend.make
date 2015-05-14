@@ -14,6 +14,8 @@ CMakeFiles/mdatom.dir/src/forcea.cpp.o: src/forcea.cpp
 CMakeFiles/mdatom.dir/src/gauss.cpp.o: src/gauss.cpp
 CMakeFiles/mdatom.dir/src/gauss.cpp.o: include/mdprog.h
 
+CMakeFiles/mdatom.dir/src/langevin.cpp.o: src/langevin.cpp
+
 CMakeFiles/mdatom.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/mdatom.dir/src/main.cpp.o: include/mdprog.h
 

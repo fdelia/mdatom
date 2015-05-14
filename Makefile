@@ -234,6 +234,30 @@ src/gauss.cpp.s:
 	$(MAKE) -f CMakeFiles/mdatom.dir/build.make CMakeFiles/mdatom.dir/src/gauss.cpp.s
 .PHONY : src/gauss.cpp.s
 
+src/langevin.o: src/langevin.cpp.o
+.PHONY : src/langevin.o
+
+# target to build an object file
+src/langevin.cpp.o:
+	$(MAKE) -f CMakeFiles/mdatom.dir/build.make CMakeFiles/mdatom.dir/src/langevin.cpp.o
+.PHONY : src/langevin.cpp.o
+
+src/langevin.i: src/langevin.cpp.i
+.PHONY : src/langevin.i
+
+# target to preprocess a source file
+src/langevin.cpp.i:
+	$(MAKE) -f CMakeFiles/mdatom.dir/build.make CMakeFiles/mdatom.dir/src/langevin.cpp.i
+.PHONY : src/langevin.cpp.i
+
+src/langevin.s: src/langevin.cpp.s
+.PHONY : src/langevin.s
+
+# target to generate assembly for a file
+src/langevin.cpp.s:
+	$(MAKE) -f CMakeFiles/mdatom.dir/build.make CMakeFiles/mdatom.dir/src/langevin.cpp.s
+.PHONY : src/langevin.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -378,6 +402,9 @@ help:
 	@echo "... src/gauss.o"
 	@echo "... src/gauss.i"
 	@echo "... src/gauss.s"
+	@echo "... src/langevin.o"
+	@echo "... src/langevin.i"
+	@echo "... src/langevin.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
