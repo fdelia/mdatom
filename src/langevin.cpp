@@ -50,9 +50,9 @@ void langevin( int nat, double x[], double box[], double epslj, double siglj,
         double one=1.0;
         int     m, i, j, i3, j3, n;  // Array counters
 
-		double sd			 // SD of the gaussian distr for the stochastic force xxx
-		double fri			 // friction term in the langevin equation xxx
-		double fst			 // stochastic force in the langevin equation xxx
+		double sd;			 // SD of the gaussian distr for the stochastic force xxx
+		double fri;			 // friction term in the langevin equation xxx
+		double fst;			 // stochastic force in the langevin equation xxx
 /*
  * initialise variables
  */
@@ -67,7 +67,7 @@ void langevin( int nat, double x[], double box[], double epslj, double siglj,
         rcutg2 = rcutg*rcutg;
         if(rcutg > 0)
                 dgr = rcutg/ngr;
-		sd = 6*amas*gamma*boltz*temp0 // xxx
+		sd = 6*amas*gamma*boltz*temp0; // xxx
 /*
  * set potential energy, virial and forces equal to zero
  */
