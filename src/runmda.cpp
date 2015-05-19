@@ -139,6 +139,8 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
 	        }
         }
 
+        double pres0=pres; // xxx ???
+
         *temp = ener[1]/fac;
         cout << "\n\n INITIAL TEMPERATURE IS :\n\n " << *temp << "\n";
 /* dynamics step */
@@ -152,15 +154,18 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
 /* calculate forces, potential energy, virial
  * and contribution to the radial distribution function
  */
+
+            // 6.6.2 xxx
+            // TODO: add asserts in main.cpp for input params
+
             double gamma=1;
 
             if (ntt==3)
                 langevin(nat, x, box, epslj, siglj, rcutf, &epot, f, &vir, rcutg, ngr, igr,
-				gamma, amas, boltz, temp0, ig, v);
+                gamma, amas, boltz, temp0, ig, v);
             else   
                 forcea(nat, x, box, epslj, siglj, rcutf, &epot, f, &vir, rcutg, ngr, igr);
 
-            // 6.6.2 xxx ersetze forcea
 
             ener[2] = epot;
             ener[3] = vir;
@@ -168,7 +173,15 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
 /* determine velocity scaling factor, when coupling to a bath */
             scal = (ntt > 0) ? sqrt(one+dtt*(ekin0/ekg-one)) : one;
 
-            // 6.6.3
+            // 6.6.3 xxx 
+
+            double taup=1;
+            double betat=1;
+
+
+            if (ntt==4)
+                scal = pow((1 + betat*dt/taup * (pres - pres0)), 1/3);
+
 
 /* perform leap-frog integration step,
  * calculate kinetic energy at time t-dt/2 and at time t,

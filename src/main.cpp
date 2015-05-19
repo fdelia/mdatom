@@ -341,7 +341,7 @@ int main(int argc, char *argv[]){
         }
 
         // xxx, asserts 
-        if (dtcoll > 0 && ntt!=2){
+        if (dtcoll > 0 && ntt==0){
                 cout << "ATTENTION: dtcoll given, but ntt=0. intention?";
                 return(1);  
         } 
