@@ -18,8 +18,9 @@ params.inp
 3: BOX[1] BOX[2]  BOX[3]
 4: NBOX[1]NBOX[2] NBOX[3] DX  IG  TEMPI
 5: NTT    TEMPO   TAUT    BOLTZ
-6: NSTLIM T       DT      TCOLL
+6: NSTLIM T       DT      
 7: AMAS   EPSLJ   SIGLJ   RCUTF
 8: NTPR   NTWX    NTWXM   NTPW
 9: NGR    RCUTG
+10:DTCOll GAMMA   TAUP    BETAT
 ```
