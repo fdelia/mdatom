@@ -11,12 +11,6 @@ void langevin( int nat, double x[], double box[], double epslj, double siglj,
 			 double boltz, double temp0, int ig, double v[]){
 
 
-
-        // xxx, not yet implemented
-        return;
-
-
-
         double  boxinv[3];   // Inverse box length
         double  xij[3];      // Inter-particle vector
         double  rij;         // Inter-particle distance
@@ -112,6 +106,7 @@ void langevin( int nat, double x[], double box[], double epslj, double siglj,
 /*
  * evaluate contribution to the radial distribution function
  */
+ 
                         if(rij2 < rcutg2) {
                                 rij = sqrt(rij2);
                                 n   = (int)(rij/dgr);
