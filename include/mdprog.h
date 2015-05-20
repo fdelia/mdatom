@@ -62,7 +62,7 @@ void runmda ( int nat, double x[], double v[], double f[], double amas,
               double epslj, double siglj, double rcutf, double box[],
               int nstlim, double t, double dt, int ntt, double temp0,
               double taut, double boltz, double *temp, int ntpr, int ntwx,
-              int ntwxm, int ntpw, double rcutg, int ngr, int igr[] , double dtcoll, int ig); // xxx
+              int ntwxm, int ntpw, double rcutg, int ngr, int igr[] , double dtcoll, int ig, double gamma, double taup, double betat); // xxx
 
 // Keep atoms in central periodic box: shia.cpp
 void shia ( int nat, double x[], double box[], double xmin[] );

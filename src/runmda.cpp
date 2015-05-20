@@ -83,7 +83,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
               double epslj, double siglj, double rcutf, double box[],
               int nstlim, double t, double dt, int ntt, double temp0,
               double taut, double boltz, double *temp, int ntpr, int ntwx,
-              int ntwxm, int ntpw, double rcutg, int ngr, int igr[] , double dtcoll, int ig){ // xxx
+              int ntwxm, int ntpw, double rcutg, int ngr, int igr[] , double dtcoll, int ig, double gamma, double taup, double betat){ // xxx
 
         double  xmin[3], xcm[3], vcm[3], ener[6], enert[6], enert2[6];
         double  one, fac, dtt, dt5, vh, pres, ekin0, vol, dtm, eold,
@@ -158,7 +158,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
             // 6.6.2 xxx
             // TODO: add asserts in main.cpp for input params
 
-            double gamma=1;
+            // double gamma=1;
 
             if (ntt==3)
                 langevin(nat, x, box, epslj, siglj, rcutf, &epot, f, &vir, rcutg, ngr, igr,
@@ -175,8 +175,8 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
 
             // 6.6.3 xxx 
 
-            double taup=1;
-            double betat=1;
+            // double taup=1;
+            // double betat=1;
 
 
             if (ntt==4)

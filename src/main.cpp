@@ -156,11 +156,12 @@ int main(int argc, char *argv[]){
 	int     ntt;
 	double  temp0, taut, boltz;
     int     nstlim;
-    double  t, dt, dtcoll; // xxx
+    double  t, dt;
     double  amas, epslj, siglj,rcutf;
 	int     ntpr, ntwx,ntwxm,ntpw;
 	int     ngr;
     double  rcutg;
+    double  dtcoll, gamma, taup, betat; // xxx
 	
     // Parameters derived from input parameters 
     int      nat3;
@@ -213,10 +214,11 @@ int main(int argc, char *argv[]){
     fin1 >> box[0]  >> box[1]  >> box[2];
     fin1 >> nbox[0] >> nbox[1] >> nbox[2] >> dx >> ig >> tempi;
     fin1 >> ntt     >> temp0   >> taut    >> boltz;   
-    fin1 >> nstlim  >> t       >> dt      >> dtcoll; // xxx 
+    fin1 >> nstlim  >> t       >> dt;
     fin1 >> amas    >> epslj   >> siglj   >> rcutf ;  
     fin1 >> ntpr    >> ntwx    >> ntwxm   >> ntpw;
     fin1 >> ngr     >> rcutg;   
+    fin1 >> dtcoll  >> gamma   >> taup    >> betat; // xxx
 
     fin1.close();
 
@@ -341,17 +343,25 @@ int main(int argc, char *argv[]){
         }
 
         // xxx, asserts 
-        if (dtcoll > 0 && ntt==0){
+        /*if (dtcoll > 0 && ntt==0){
                 cout << "ATTENTION: dtcoll given, but ntt=0. intention?";
                 return(1);  
         } 
         if (dt > dtcoll/2){
                 cout << "ATTENTION: dt is big in comparison to dt_coll";
                 return(1);  
-        } 
+        } */
         if (ntt==2 && dtcoll == 0){
-                cout << "ATTENTION: dt_coll is not given, but ntt=2";
+                cout << "ATTENTION: ntt=2 requires dtcoll";
                 return(1);    
+        }
+        if (ntt==3 && gamma == 0){
+                cout << "ATTENTION: ntt=3 requires gamma";
+                return(1);
+        }
+        if (ntt==4 && (taup==0 || betat == 0)){
+                cout << "ATTENTION: ntt=4 requires taup and betat";
+                return(1);
         }
 
 
@@ -482,7 +492,7 @@ int main(int argc, char *argv[]){
 	  auto timepoint_start = std::chrono::high_resolution_clock::now();
       runmda(nat, x, v, f, amas, epslj, siglj, rcutf, box, nstlim, t,
              dt, ntt, temp0, taut, boltz, &temp, ntpr, ntwx, ntwxm,
-             ntpw, rcutg,  ngr, igr, dtcoll, ig);
+             ntpw, rcutg,  ngr, igr, dtcoll, ig, gamma, taup, betat);
       time(&time_end);
 	  auto timepoint_end = std::chrono::high_resolution_clock::now();
 
