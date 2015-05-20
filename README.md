@@ -1,6 +1,7 @@
 mdatom
 ======
 
+Autoren: Timo Jung, Fabio D'Elia
 Jede Änderung am Originalprogramm wurde mit einem "xxx" im Kommentar vermerkt.
 
 Einstellung für das Coupling: ntt=
