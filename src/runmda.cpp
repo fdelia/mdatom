@@ -171,7 +171,9 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
             ener[3] = vir;
 
 /* determine velocity scaling factor, when coupling to a bath */
-            scal = (ntt > 0) ? sqrt(one+dtt*(ekin0/ekg-one)) : one;
+            scal = (ntt == 1) ? sqrt(one+dtt*(ekin0/ekg-one)) : one;
+
+
 
             // 6.6.3 xxx 
 
@@ -237,6 +239,8 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
 
                         // randomize v[x/y/z]
                         double vGauss;
+                        double mean = sqrt(3*boltz*temp0/amas);
+                        sd = sqrt(boltz*temp0/amas);
 
                         vGauss = gauss(0, sd, &ig);
                         v[koord] = vGauss;
@@ -278,6 +282,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
                 cout << setw(15) << "VIRIAL";
                 cout << setw(15) << "PRESSURE";
                 cout << setw(15) << "SCALE-T";
+                cout << setw(15) << "TEMP";
                 cout << "\n\n";
 		    }
 		    
@@ -289,6 +294,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
 			    }
                 cout <<"\n";
             }
+
 
 /* calculate and print center of mass motion
  * once in nlsq steps, at time t-dt/2
@@ -321,6 +327,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
         cout << setw(15) << "VIRIAL";
         cout << setw(15) << "PRESSURE";
         cout << setw(15) << "SCALE-T";
+        cout << setw(15) << "Current Temp";
 	    cout << "\n\n";	 
 	
         cout.setf(ios::right);
@@ -350,6 +357,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
         for(k=0; k<nren; k++) {
 	        cout << setw(15) << enert2[k];
 	    }
+        cout << setw(15) << ener[1];
 	
         cout << "\n";
         *temp  = enert[1]/fac;
