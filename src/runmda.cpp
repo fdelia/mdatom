@@ -201,10 +201,10 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
             }
             eold *= (amas/2.);
             enew *= (amas/8.);
-            ener[1] = enew;
-            ener[0] = ener[1] + ener[2];
+            ener[1] = enew; // E_kin
+            ener[0] = ener[1] + ener[2]; // E_tot
             pres = 2.*(enew-vir)/(vol*3.);
-            ener[4] = pres;
+            ener[4] = pres; // P
             ener[5] = scal;
             if(ntt > 0){
 		        ekg = eold;
@@ -282,7 +282,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
                 cout << setw(15) << "VIRIAL";
                 cout << setw(15) << "PRESSURE";
                 cout << setw(15) << "SCALE-T";
-                cout << setw(15) << "TEMP";
+                cout << setw(15) << "AVERAGE TEMP";
                 cout << "\n\n";
 		    }
 		    
@@ -292,6 +292,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
                 for(k=0; k<nren; k++){
 			        cout << setw(15) << ener[k] ;
 			    }
+                cout << setw(15) << enert[1] / nstep / fac ; // average temp
                 cout <<"\n";
             }
 
@@ -327,7 +328,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
         cout << setw(15) << "VIRIAL";
         cout << setw(15) << "PRESSURE";
         cout << setw(15) << "SCALE-T";
-        cout << setw(15) << "Current Temp";
+        //cout << setw(15) << "Current Temp";
 	    cout << "\n\n";	 
 	
         cout.setf(ios::right);
