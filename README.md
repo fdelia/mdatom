@@ -30,7 +30,8 @@ Autoren: Timo Jung, Fabio D'Elia
 
 ## How to plot?
 ```
-./mdatom exercises/6.6.1/params.inp exercises/6.6.1/coords.inp >> results.txt
-python ../scripts/energy.py results.txt >> resultsFor.txt
-``
-then use R-Code
+./mdatom exercises/6.6.1/params.inp exercises/6.6.1/coords.inp > results.txt
+python ../scripts/energy.py results.txt > resultsFor.txt
+```
+
+Then use R-Code / your own software.
