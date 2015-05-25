@@ -26,7 +26,7 @@ plot(xrange, yrange, type='n', xlab='Steps', ylab='Temp')
 lines(dat1$V1, dat1$V9, type='l', col='blue')
 lines(dat2$V1, dat2$V9, type='l', col='orange')
 lines(dat3$V1, dat3$V9, type='l', col='green')
-legend('topleft', inset=.05, c('Maxwellian thermalisation', 'Stochastic coupling to heat bath', 'Weak pressure coupling'), fill=c('blue', 'orange', 'green'), pt.cex=1, cex=0.7)
+legend('bottomright', inset=.05, c('Maxwellian thermalisation', 'Stochastic coupling to heat bath', 'Weak pressure coupling'), fill=c('blue', 'orange', 'green'), pt.cex=1, cex=1.3)
 
-title(main='Coupling to a temperature or pressure bath - 100 atoms')
+title(main='Coupling to a temperature or pressure bath - 3000 atoms')
 
