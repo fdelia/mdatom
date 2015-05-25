@@ -1,3 +1,26 @@
+x <- seq(5, 15, length=1000)
+x
+x <- seq(0, 15, length=1000)
+0
+x
+y <- dnorm(x, mean=1, sd=0.1)
+yy
+<
+y
+plot(x,y,type="l",lwd=1)
+plot(x,y,type="l")
+y <- dnorm(x, mean=1, sd=0.01)
+plot(x,y,type="l")
+y <- dnorm(x, mean=1, sd=0.3)
+plot(x,y,type="l")
+yc <- pnorm(x,mean=1,sd=0.1)
+plot(x,yc,type="l")
+x <- seq(0, 2, length=1000)
+yc <- pnorm(x,mean=1,sd=0.1)
+plot(x,yc,type="l")
+plot(x,y,type="l")
+y <- dnorm(x, mean=1, sd=0.01)
+plot(x,y,type="l")
 yc <- pnorm(x,mean=1,sd=0.1)
 plot(x,yc,type="l")
 yc <- pnorm(x,mean=1,sd=0.5)
@@ -17,360 +40,6 @@ y <- dnorm(x, mean=1, sd=0.5)
 plot(x,y,type="l")
 y <- dnorm(x, mean=1, sd=0.25)
 plot(x,y,type="l")
-getCwd()
-getPwd()
-getwd()
-setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources')
-getwd()
-dat = read.csv('run_formatted.txt', header = TRUE)
-dat
-dat[0]
-dat[0][0]
-dat[0][1]
-dat[1]
-dat[0]
-summary(dat)
-dat$1
-dat$0
-names(dat)
-dat$inf
-dat$1
-dat$X1
-dat = read.csv('run_formatted.txt', header = FALSE)
-dat
-headers(dat)
-names(dat)
-attributes(dat)
-dat$V1
-dat$V1[0]
-dat$V1[1]
-dat$V1[2]
-dat$V1[:1]
-dat$V1[0][1]
-names(dat)
-data[,]
-data[,2]
-data[,c('V1')]
-data
-data[0]
-data[[0]]
-dat[[0]]
-dat[0]
-dat[0][0]
-dat[0][[0]]
-dat[[0]]
-dat[c(V1)]
-dat[c()]
-dat
-dat[0]
-dat = read.csv('resultsFor.txt', header = FALSE)
-dat[0]
-dat = read.csv('resultsFor.txt', header = FALSE, sep=' ')
-dat[0]
-dat
-dat = read.csv('resultsFor.txt', header = FALSE)
-dat
-dat[[0]]
-dat[0][0]
-dat[0][1]
-dat[0][[0]]
-names(dat)
-dat$V1
-dat$V1[0]
-dat$V1[100]
-head(dat)
-dat = read.csv('resultsFor.txt', sep='', header = FALSE)
-names(dat)
-dat$V1
-dat$V8
-dat$V9
-plot(dat$V1, dat$V9)
-plot(dat$V1, dat$V9, type='n')
-plot(dat$V1, dat$V9, type='l')
-plot(dat$V1, dat$V9)
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. E')
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='#123')
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='#123123')
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-dat$V9
-max(dat$V9)
-> colMax <- function(data) sapply(data, max, na.rm = TRUE)
-colMax <- function(data) sapply(data, max, na.rm = TRUE)
-colMax(dat$V9)
-colMax(dat)
-dat$V1[dat$V1>0]
-dat$V1[dat$V1>1]
-dat$V1[dat$V1>100]
-dat$V1[dat$V1<100]
-dat$V9[dat$V9>2]
-dat$V9[dat$V9>0]
-dat$V9
-dat$V9[1]
-dat$V9[0]
-dat$V9[2]
-dat$V9[3]
-dat$V9[4]
-dat$V9[0] <- NULL
-dat$V9[0] <- null
-dat[0]
-dat[0][0]
-dat
-head(dat, 1)
-head(dat, 10)
-dat = dat[-1,]
-dat$V9[dat$V9>2]
-dat = dat[-1,]
-dat$V9[dat$V9>2]
-head(dat)
-dat[,9]
-dat[,9] <- as.numeric(as.character(dat[,9]))
-dat$V9[dat$V9>2]
-dat = read.csv('resultsFor.txt', sep='', header = FALSE)
-dat[,9] <- as.numeric(as.character(dat[,9]))
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-title('Maxwellian thermalisation', '')
-title('Maxwellian thermalisation', 'asd')
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-title('Maxwellian thermalisation', 'asd')
-dat[complete.cases(dat)]
-dat[complete.cases(dat),]
-dat = dat[complete.cases(dat),]
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-dat$V9 = dat$V9[dat$V9>1]
-dat = dat[dat$V9>1]
-dat = dat[dat$V9>1,]
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-title('Maxwellian thermalisation', 'asd')
-setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources')
-dat = read.csv('resultsFor.txt', sep='', header = FALSE)
-dat[,9] <- as.numeric(as.character(dat[,9]))
-dat = dat[dat$V9>0.9,]
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-title('Maxwellian thermalisation')
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources')
-dat = read.csv('resultsFor.txt', sep='', header = FALSE)
-dat[,9] <- as.numeric(as.character(dat[,9]))
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-title('6.6.2')
-dat = read.csv('resultsFor.txt', sep='', header = FALSE)
-dat[,9] <- as.numeric(as.character(dat[,9]))
-dat = dat[dat$V9>0.9,]
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-title('6.6.2 10k steps')
-dat = read.csv('resultsFor.txt', sep='', header = FALSE)
-dat[,9] <- as.numeric(as.character(dat[,9]))
-dat = dat[dat$V9>0.9,]
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-title('6.6.3 10k steps')
-dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
-dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)
-dat1[,9] <- as.numeric(as.character(dat1[,9]))#
-dat3[,9] <- as.numeric(as.character(dat3[,9]))#
-# remove cases with errors (NaN, inf etc)#
-dat1 = dat1[dat1$V9>0.9,]#
-dat3 = dat3[dat3$V9>0.9,]
-plot(dat1$V1, dat1$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-lines(dat3$V1, dat3$V9, type='l', col='green')
-title('Coupling to a temperature or pressure bath')
-legend(title='coupling', c('collisions', 'pressure scaling'))
-legend('topright', title='coupling', c('collisions', 'pressure scaling'))
-legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'))
-legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue, 'green'))
-legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))
-at1$V1, dat1$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')#
-lines(dat3$V1, dat3$V9, type='l', col='green')#
-#title('6.6.3 10k steps')#
-#title('6.6.2 10k steps')#
-title('Coupling to a temperature or pressure bath')#
-#
-legend
-plot(dat1$V1, dat1$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')#
-lines(dat3$V1, dat3$V9, type='l', col='green')#
-#title('6.6.3 10k steps')#
-#title('6.6.2 10k steps')#
-title('Coupling to a temperature or pressure bath')#
-#
-legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))
-dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
-dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
-# dat$V1 is step#
-# dat$V9 is average energy at this step#
-#
-# V9 is read as factor... convert#
-dat1[,9] <- as.numeric(as.character(dat1[,9]))#
-dat3[,9] <- as.numeric(as.character(dat3[,9]))#
-# remove cases with errors (NaN, inf etc)#
-dat1 = dat1[dat1$V9>0.9,]#
-dat3 = dat3[dat3$V9>0.9,]#
-#
-plot(dat1$V1, dat1$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')#
-lines(dat3$V1, dat3$V9, type='l', col='green')#
-#title('6.6.3 10k steps')#
-#title('6.6.2 10k steps')#
-title('Coupling to a temperature or pressure bath')#
-#
-legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))
-dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
-dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
-# dat$V1 is step#
-# dat$V9 is average energy at this step#
-#
-# V9 is read as factor... convert#
-dat1[,9] <- as.numeric(as.character(dat1[,9]))#
-dat3[,9] <- as.numeric(as.character(dat3[,9]))#
-# remove cases with errors (NaN, inf etc)#
-dat1 = dat1[dat1$V9>0.9,]#
-dat3 = dat3[dat3$V9>0.9,]#
-#
-plot(dat1$V1, dat1$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')#
-lines(dat3$V1, dat3$V9, type='l', col='green')#
-#title('6.6.3 10k steps')#
-#title('6.6.2 10k steps')#
-title(main='Coupling to a temperature or pressure bath', sub='100 atoms')#
-#
-legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))
-dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
-dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
-# dat$V1 is step#
-# dat$V9 is average energy at this step#
-#
-# V9 is read as factor... convert#
-dat1[,9] <- as.numeric(as.character(dat1[,9]))#
-dat3[,9] <- as.numeric(as.character(dat3[,9]))#
-# remove cases with errors (NaN, inf etc)#
-dat1 = dat1[dat1$V9>0.1,]#
-dat3 = dat3[dat3$V9>0.1,]#
-#
-plot(dat1$V1, dat1$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')#
-lines(dat3$V1, dat3$V9, type='l', col='green')#
-#title('6.6.3 10k steps')#
-#title('6.6.2 10k steps')#
-title(main='Coupling to a temperature or pressure bath', sub='100 atoms')#
-#
-legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))
-# use your own directory, if not already set#
-setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources')#
-#
-dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
-dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
-# dat$V1 is step#
-# dat$V9 is average energy at this step#
-#
-# V9 is read as factor... convert#
-dat1[,9] <- as.numeric(as.character(dat1[,9]))#
-dat3[,9] <- as.numeric(as.character(dat3[,9]))#
-# remove cases with errors (NaN, inf etc)#
-dat1 = dat1[dat1$V9>0.1,]#
-dat3 = dat3[dat3$V9>0.1,]#
-#
-plot(dat1$V1, dat1$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')#
-lines(dat3$V1, dat3$V9, type='l', col='green')#
-#title('6.6.3 10k steps')#
-#title('6.6.2 10k steps')#
-title(main='Coupling to a temperature or pressure bath, 100 atoms')#
-#
-legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))
-dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
-dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
-# dat$V1 is step#
-# dat$V9 is average energy at this step#
-#
-# V9 is read as factor... convert#
-dat1[,9] <- as.numeric(as.character(dat1[,9]))#
-dat3[,9] <- as.numeric(as.character(dat3[,9]))#
-# remove cases with errors (NaN, inf etc)#
-dat1 = dat1[dat1$V9>0.1,]#
-dat3 = dat3[dat3$V9>0.1,]#
-#
-plot(dat1$V1, dat1$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')#
-lines(dat3$V1, dat3$V9, type='l', col='green')#
-#title('6.6.3 10k steps')#
-#title('6.6.2 10k steps')#
-title(main='Coupling to a temperature or pressure bath, 100 atoms')#
-#
-legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))
-dat3$V9
-plot(dat3$V1, dat3$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-range(0,1)
-max(dat3$V9)
-min(dat3$V9)
-min(dat3$V9, dat1$V9)
-yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))
-yrange
-max(dat3$V9[is.finite])
-max(dat3$V9[is.finite(dat3$V9)])
-max(dat3$V9[is.finite(dat3$V9) && dat3$V9 > 0])
-(dat3$V9[is.finite(dat3$V9) && dat3$V9 > 0])
-(dat3$V9[is.finite(dat3$V9) ])
-(dat3$V9[is.finite(dat3$V9) and 1])
-(dat3$V9[is.finite(dat3$V9) && 1])
-(dat3$V9[is.finite(dat3$V9) && True])
-(dat3$V9[is.finite(dat3$V9),])
-(dat3$V9[is.finite(dat3$V9)])
-(dat3$V9[is.finite(dat3$V9)][dat3$V9>0,])
-(dat3$V9[is.finite(dat3$V9)][dat3$V9>0])
-(dat3$V9[is.finite(dat3$V9)][dat3$V9>0])
-(dat3$V9[is.finite(dat3$V9)])
-(dat3$V9[is.finite(dat3$V9)][dat3$V9>0])
-dat3 = dat3[dat3$V9>0,][is.finite(dat3$V9)]
-dat3 = dat3[dat3$V9>0][is.finite(dat3$V9)]
-dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)
-dat3 = dat3[dat3$V9>0][is.finite(dat3$V9)]
-dat3 = dat3[dat3$V9>0,]
-dat3 = dat3[is.finite(dat3$V9)][dat3$V9>0,]
-dat3 <- do.call(data.frame,lapply(DT, function(x) replace(x, is.infinite(x),NA)))
-dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),NA)))
-yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))
-yrange
-dat3$V9
-max(dat3$V9)
-dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),0)))
-yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))
-yrange
-dat3$V9
-dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)
-dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),0)))
-dat3$V9
-dat3 = dat3[dat3$V9>0,]
-yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))
-yrange
-dat1 <- do.call(data.frame,lapply(dat1, function(x) replace(x, is.infinite(x),0)))
-dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
-dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
-# dat$V1 is step#
-# dat$V9 is average energy at this step#
-#
-# V9 is read as factor... convert#
-dat1[,9] <- as.numeric(as.character(dat1[,9]))#
-dat3[,9] <- as.numeric(as.character(dat3[,9]))#
-# remove cases with errors (NaN, inf etc)#
-dat1 <- do.call(data.frame,lapply(dat1, function(x) replace(x, is.infinite(x),0)))#
-dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),0)))#
-dat1 = dat1[dat1$V9>0,]#
-dat3 = dat3[dat3$V9>0,]#
-#
-yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))
-yrange
-plot(dat1$V1, dat1$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-lines(dat1$V1, dat1$V9, type='l', col='green')
-lines(dat3$V1, dat3$V9, type='l', col='green')
-plot(dat1$V1, dat1$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-lines(dat3$V1, dat3$V9, type='l', col='green')
-plot(dat1$V1, yrange, type='n', xlab='Steps', ylab='av. Energy')
-count()
-nrow(dat1)
-yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9), nrow(dat1))
-yrange
-range(0,1,1000)
-range(0,10,1000)
-xrange = range(0,10000)
-yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))
-plot(xrange, yrange, type='n', xlab='Steps', ylab='av. Energy')
-lines(dat1$V1, dat1$V9, type='l', col='blue')
-lines(dat3$V1, dat3$V9, type='l', col='green')
-title(main='Coupling to a temperature or pressure bath, 2 atoms')
-legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))
 # use your own directory, if not already set#
 setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/results')#
 #
@@ -392,6 +61,330 @@ xrange = range(0,10000)#
 yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))#
 #
 plot(xrange, yrange, type='n', xlab='Steps', ylab='av. Energy')#
+lines(dat1$V1, dat1$V9, type='l', col='blue')#
+lines(dat3$V1, dat3$V9, type='l', col='green')#
+legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
+#
+title(main='Coupling to a temperature or pressure bath, 2 atoms')
+plot(xrange, yrange, type='n', xlab='Steps', ylab='E_tot / atom')
+')#
+lines(dat1$V1, dat1$V9, type='l', col='blue')#
+lines(dat3$V1, dat3$V9, type='l', col='green')#
+legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
+#
+title(main='Coupling to a temperature or pressure bath, 2 atoms')
+dat1
+head(dat1)
+xrange = range(0,10000)#
+yrange = range(min(dat1$V3, dat3$V3), max(dat1$V3, dat3$V3))#
+#
+plot(xrange, yrange, type='n', xlab='Steps', ylab='E_tot')#
+lines(dat1$V1, dat1$V3, type='l', col='blue')#
+lines(dat3$V1, dat3$V3, type='l', col='green')#
+legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
+#
+title(main='Coupling to a temperature or pressure bath, 2 atoms')
+xrange = range(0,10000)#
+yrange = range(min(dat1$V3, dat3$V3), max(dat1$V3, dat3$V3))#
+#
+plot(xrange, yrange, type='n', xlab='Steps', ylab='E_tot')#
+lines(dat1$V1, dat1$V3, type='l', col='blue')#
+lines(dat3$V1, dat3$V3, type='l', col='green')#
+legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
+#
+title(main='Coupling to a temperature or pressure bath, 2 atoms')
+# use your own directory, if not already set#
+setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/results')#
+#
+dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
+dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
+# dat$V1 is step#
+# dat$V9 is average energy at this step#
+#
+# V9 is read as factor... convert#
+dat1[,9] <- as.numeric(as.character(dat1[,9]))#
+dat3[,9] <- as.numeric(as.character(dat3[,9]))#
+#
+# remove cases with errors (NaN, inf etc)#
+dat1 <- do.call(data.frame,lapply(dat1, function(x) replace(x, is.infinite(x),0)))#
+dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),0)))#
+dat1 = dat1[dat1$V9>0,]#
+dat3 = dat3[dat3$V9>0,]#
+#
+xrange = range(0,10000)#
+yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))#
+#
+plot(xrange, yrange, type='n', xlab='Steps', ylab='E_tot')#
+lines(dat1$V1, dat1$V9, type='l', col='blue')#
+lines(dat3$V1, dat3$V9, type='l', col='green')#
+legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
+#
+title(main='Coupling to a temperature or pressure bath, 2 atoms')
+# use your own directory, if not already set#
+setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/results')#
+#
+dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
+dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
+# dat$V1 is step#
+# dat$V9 is average energy at this step#
+#
+# V9 is read as factor... convert#
+dat1[,9] <- as.numeric(as.character(dat1[,9]))#
+dat3[,9] <- as.numeric(as.character(dat3[,9]))#
+#
+# remove cases with errors (NaN, inf etc)#
+dat1 <- do.call(data.frame,lapply(dat1, function(x) replace(x, is.infinite(x),0)))#
+dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),0)))#
+dat1 = dat1[dat1$V9>0,]#
+dat3 = dat3[dat3$V9>0,]#
+#
+xrange = range(0,10000)#
+yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))#
+#
+plot(xrange, yrange, type='n', xlab='Steps', ylab='E_tot')#
+lines(dat1$V1, dat1$V9, type='l', col='blue')#
+lines(dat3$V1, dat3$V9, type='l', col='green')#
+legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
+#
+title(main='Coupling to a temperature or pressure bath, 2 atoms')
+# use your own directory, if not already set#
+setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/results')#
+#
+dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
+dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
+# dat$V1 is step#
+# dat$V9 is average energy at this step#
+#
+# V9 is read as factor... convert#
+dat1[,9] <- as.numeric(as.character(dat1[,9]))#
+dat3[,9] <- as.numeric(as.character(dat3[,9]))#
+#
+# remove cases with errors (NaN, inf etc)#
+dat1 <- do.call(data.frame,lapply(dat1, function(x) replace(x, is.infinite(x),0)))#
+dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),0)))#
+dat1 = dat1[dat1$V9>0,]#
+dat3 = dat3[dat3$V9>0,]#
+#
+xrange = range(0,10000)#
+yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))#
+#
+plot(xrange, yrange, type='n', xlab='Steps', ylab='E_tot')#
+lines(dat1$V1, dat1$V9, type='l', col='blue')#
+lines(dat3$V1, dat3$V9, type='l', col='green')#
+legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
+#
+title(main='Coupling to a temperature or pressure bath, 2 atoms')
+# use your own directory, if not already set#
+setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/results')#
+#
+dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
+dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
+# dat$V1 is step#
+# dat$V9 is average energy at this step#
+#
+# V9 is read as factor... convert#
+dat1[,9] <- as.numeric(as.character(dat1[,9]))#
+dat3[,9] <- as.numeric(as.character(dat3[,9]))#
+#
+# remove cases with errors (NaN, inf etc)#
+dat1 <- do.call(data.frame,lapply(dat1, function(x) replace(x, is.infinite(x),0)))#
+dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),0)))#
+dat1 = dat1[dat1$V9>0,]#
+dat3 = dat3[dat3$V9>0,]#
+#
+xrange = range(0,10000)#
+yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))#
+#
+plot(xrange, yrange, type='n', xlab='Steps', ylab='E_tot')#
+lines(dat1$V1, dat1$V9, type='l', col='blue')#
+lines(dat3$V1, dat3$V9, type='l', col='green')#
+legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
+#
+title(main='Coupling to a temperature or pressure bath, 2 atoms')
+# use your own directory, if not already set#
+setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/results')#
+#
+dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
+dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
+# dat$V1 is step#
+# dat$V9 is average energy at this step#
+#
+# V9 is read as factor... convert#
+dat1[,9] <- as.numeric(as.character(dat1[,9]))#
+dat3[,9] <- as.numeric(as.character(dat3[,9]))#
+#
+# remove cases with errors (NaN, inf etc)#
+dat1 <- do.call(data.frame,lapply(dat1, function(x) replace(x, is.infinite(x),0)))#
+dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),0)))#
+dat1 = dat1[dat1$V9>0,]#
+dat3 = dat3[dat3$V9>0,]#
+#
+xrange = range(0,10000)#
+yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))#
+#
+plot(xrange, yrange, type='n', xlab='Steps', ylab='E_tot')#
+lines(dat1$V1, dat1$V9, type='l', col='blue')#
+lines(dat3$V1, dat3$V9, type='l', col='green')#
+legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
+#
+title(main='Coupling to a temperature or pressure bath, 2 atoms')
+# use your own directory, if not already set#
+setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/results')#
+#
+dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
+dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
+# dat$V1 is step#
+# dat$V9 is average energy at this step#
+#
+# V9 is read as factor... convert#
+dat1[,9] <- as.numeric(as.character(dat1[,9]))#
+dat3[,9] <- as.numeric(as.character(dat3[,9]))#
+#
+# remove cases with errors (NaN, inf etc)#
+dat1 <- do.call(data.frame,lapply(dat1, function(x) replace(x, is.infinite(x),0)))#
+dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),0)))#
+dat1 = dat1[dat1$V9>0,]#
+dat3 = dat3[dat3$V9>0,]#
+#
+xrange = range(0,10000)#
+yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))#
+#
+plot(xrange, yrange, type='n', xlab='Steps', ylab='E_tot')#
+lines(dat1$V1, dat1$V9, type='l', col='blue')#
+lines(dat3$V1, dat3$V9, type='l', col='green')#
+legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
+#
+title(main='Coupling to a temperature or pressure bath, 2 atoms')
+# use your own directory, if not already set#
+setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/results')#
+#
+dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
+dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
+# dat$V1 is step#
+# dat$V9 is average energy at this step#
+#
+# V9 is read as factor... convert#
+dat1[,9] <- as.numeric(as.character(dat1[,9]))#
+dat3[,9] <- as.numeric(as.character(dat3[,9]))#
+#
+# remove cases with errors (NaN, inf etc)#
+dat1 <- do.call(data.frame,lapply(dat1, function(x) replace(x, is.infinite(x),0)))#
+dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),0)))#
+dat1 = dat1[dat1$V9>0,]#
+dat3 = dat3[dat3$V9>0,]#
+#
+xrange = range(0,10000)#
+yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))#
+#
+plot(xrange, yrange, type='n', xlab='Steps', ylab='E_tot')#
+lines(dat1$V1, dat1$V9, type='l', col='blue')#
+lines(dat3$V1, dat3$V9, type='l', col='green')#
+legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
+#
+title(main='Coupling to a temperature or pressure bath, 2 atoms')
+# use your own directory, if not already set#
+setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/results')#
+#
+dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
+dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
+# dat$V1 is step#
+# dat$V9 is average energy at this step#
+#
+# V9 is read as factor... convert#
+dat1[,9] <- as.numeric(as.character(dat1[,9]))#
+dat3[,9] <- as.numeric(as.character(dat3[,9]))#
+#
+# remove cases with errors (NaN, inf etc)#
+dat1 <- do.call(data.frame,lapply(dat1, function(x) replace(x, is.infinite(x),0)))#
+dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),0)))#
+dat1 = dat1[dat1$V9>0,]#
+dat3 = dat3[dat3$V9>0,]#
+#
+xrange = range(0,10000)#
+yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))#
+#
+plot(xrange, yrange, type='n', xlab='Steps', ylab='E_tot')#
+lines(dat1$V1, dat1$V9, type='l', col='blue')#
+lines(dat3$V1, dat3$V9, type='l', col='green')#
+legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
+#
+title(main='Coupling to a temperature or pressure bath, 2 atoms')
+# use your own directory, if not already set#
+setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/results')#
+#
+dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
+dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
+# dat$V1 is step#
+# dat$V9 is average energy at this step#
+#
+# V9 is read as factor... convert#
+dat1[,9] <- as.numeric(as.character(dat1[,9]))#
+dat3[,9] <- as.numeric(as.character(dat3[,9]))#
+#
+# remove cases with errors (NaN, inf etc)#
+dat1 <- do.call(data.frame,lapply(dat1, function(x) replace(x, is.infinite(x),0)))#
+dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),0)))#
+dat1 = dat1[dat1$V9>0,]#
+dat3 = dat3[dat3$V9>0,]#
+#
+xrange = range(0,10000)#
+yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))#
+#
+plot(xrange, yrange, type='n', xlab='Steps', ylab='E_tot')#
+lines(dat1$V1, dat1$V9, type='l', col='blue')#
+lines(dat3$V1, dat3$V9, type='l', col='green')#
+legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
+#
+title(main='Coupling to a temperature or pressure bath, 2 atoms')
+# use your own directory, if not already set#
+setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/results')#
+#
+dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
+dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
+# dat$V1 is step#
+# dat$V9 is average energy at this step#
+#
+# V9 is read as factor... convert#
+dat1[,9] <- as.numeric(as.character(dat1[,9]))#
+dat3[,9] <- as.numeric(as.character(dat3[,9]))#
+#
+# remove cases with errors (NaN, inf etc)#
+dat1 <- do.call(data.frame,lapply(dat1, function(x) replace(x, is.infinite(x),0)))#
+dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),0)))#
+dat1 = dat1[dat1$V9>0,]#
+dat3 = dat3[dat3$V9>0,]#
+#
+xrange = range(0,10000)#
+yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))#
+#
+plot(xrange, yrange, type='n', xlab='Steps', ylab='E_tot')#
+lines(dat1$V1, dat1$V9, type='l', col='blue')#
+lines(dat3$V1, dat3$V9, type='l', col='green')#
+legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
+#
+title(main='Coupling to a temperature or pressure bath, 2 atoms')
+# use your own directory, if not already set#
+setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources/results')#
+#
+dat1 = read.csv('resultsFor1.txt', sep='', header = FALSE)#
+dat3 = read.csv('resultsFor3.txt', sep='', header = FALSE)#
+# dat$V1 is step#
+# dat$V9 is average energy at this step#
+#
+# V9 is read as factor... convert#
+dat1[,9] <- as.numeric(as.character(dat1[,9]))#
+dat3[,9] <- as.numeric(as.character(dat3[,9]))#
+#
+# remove cases with errors (NaN, inf etc)#
+dat1 <- do.call(data.frame,lapply(dat1, function(x) replace(x, is.infinite(x),0)))#
+dat3 <- do.call(data.frame,lapply(dat3, function(x) replace(x, is.infinite(x),0)))#
+dat1 = dat1[dat1$V9>0,]#
+dat3 = dat3[dat3$V9>0,]#
+#
+xrange = range(0,10000)#
+yrange = range(min(dat1$V9, dat3$V9), max(dat1$V9, dat3$V9))#
+#
+plot(xrange, yrange, type='n', xlab='Steps', ylab='E_tot')#
 lines(dat1$V1, dat1$V9, type='l', col='blue')#
 lines(dat3$V1, dat3$V9, type='l', col='green')#
 legend('topright', inset=.05, title='coupling', c('collisions', 'pressure scaling'), fill=c('blue', 'green'))#
