@@ -139,7 +139,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
 	        }
         }
 
-        double pres0=pres; // xxx ???
+        double pres0 = (nat * temp0 * 8.314) / vol; // xxx ???
 
         *temp = ener[1]/fac;
         cout << "\n\n INITIAL TEMPERATURE IS :\n\n " << *temp << "\n";
