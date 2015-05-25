@@ -151,8 +151,6 @@ dat$V9[dat$V9>2]
 dat = read.csv('resultsFor.txt', sep='', header = FALSE)
 dat[,9] <- as.numeric(as.character(dat[,9]))
 plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
 title('Maxwellian thermalisation', '')
 title('Maxwellian thermalisation', 'asd')
 plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
@@ -165,5 +163,11 @@ dat$V9 = dat$V9[dat$V9>1]
 dat = dat[dat$V9>1]
 dat = dat[dat$V9>1,]
 plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
-plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
 title('Maxwellian thermalisation', 'asd')
+setwd('/Users/fabiodelia/Dropbox/Studium CSE/Statistische Physik und Computer Simulation/mdatom/sources')
+dat = read.csv('resultsFor.txt', sep='', header = FALSE)
+dat[,9] <- as.numeric(as.character(dat[,9]))
+dat = dat[dat$V9>0.9,]
+plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')
+title('Maxwellian thermalisation')
+plot(dat$V1, dat$V9, type='l', xlab='Steps', ylab='av. Energy', col='blue')

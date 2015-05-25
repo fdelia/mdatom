@@ -34,4 +34,6 @@ Autoren: Timo Jung, Fabio D'Elia
 python ../scripts/energy.py results.txt > resultsFor.txt
 ```
 
+Oder einfach: `./runPlot.sh`
+
 Then use R-Code / your own software.
