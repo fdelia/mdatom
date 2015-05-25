@@ -202,8 +202,8 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
                 eold  += vn*vn;
                 enew  += (vh+vn)*(vh+vn);
                 v[j3]  = vn;
-                x[j3] += vn*dt;
                 x[j3] *= volScal; // xxx
+                x[j3] += vn*dt;
             }
             eold *= (amas/2.);
             enew *= (amas/8.);

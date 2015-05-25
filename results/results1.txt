@@ -10652,13 +10652,13 @@ TEST 2, ENERGY, VIRIAL, ETC. OF 2 ATOMS
 
 TIMING:
 
-  At start of program:    Mon May 25 17:03:49 2015
+  At start of program:    Mon May 25 17:06:13 2015
 
-  Before calling runmda:  Mon May 25 17:03:49 2015
+  Before calling runmda:  Mon May 25 17:06:13 2015
 
-  After calling runmda:   Mon May 25 17:03:49 2015
+  After calling runmda:   Mon May 25 17:06:13 2015
 
-  Now:                    Mon May 25 17:03:49 2015
+  Now:                    Mon May 25 17:06:13 2015
 
   Time spent in runmda:   0 sec
   Time spent in total:    0 sec
@@ -10666,5 +10666,5 @@ TIMING:
 
 MORE ACCURATE TIMING:
 
-  Time spend in runmda:   176 ms
-  Time spend in total:    178 ms
+  Time spend in runmda:   165 ms
+  Time spend in total:    167 ms
