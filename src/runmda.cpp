@@ -139,7 +139,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
 	        }
         }
 
-        double pres0=pres; // xxx ???
+        double pres0 = nat3 * temp0 * 8.314 / vol; // xxx ???
 
         *temp = ener[1]/fac;
         cout << "\n\n INITIAL TEMPERATURE IS :\n\n " << *temp << "\n";
@@ -175,15 +175,6 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
 
 
 
-            // 6.6.3 xxx 
-
-            // double taup=1;
-            // double betat=1;
-
-
-            if (ntt==4)
-                scal = pow((1 + betat*dt/taup * (pres - pres0)), 1/3);
-
 
 /* perform leap-frog integration step,
  * calculate kinetic energy at time t-dt/2 and at time t,
@@ -207,10 +198,19 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
             ener[4] = pres; // P
             ener[5] = scal;
             if(ntt > 0){
-		        ekg = eold;
-		    }
+                ekg = eold;
+            }
 
 
+
+            // 6.6.3 xxx 
+
+            if (ntt==4){
+                // cout << "******** " << ((double) 1 + betat*dt/taup * (pres - pres0)) << "\n";
+                // cout << "*** dt: "<< dt<<"\n";
+                cout << "*** scal: " << cbrt((double) 1 + betat*dt/taup * (pres - pres0)) << "\n";
+                scal = cbrt((double) 1 + betat*dt/taup * (pres - pres0)); // cube root
+            }
 
             // 6.6.1 xxxx
             
@@ -282,7 +282,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
                 cout << setw(15) << "VIRIAL";
                 cout << setw(15) << "PRESSURE";
                 cout << setw(15) << "SCALE-T";
-                cout << setw(15) << "AVERAGE TEMP";
+                cout << setw(15) << "ENERGY";
                 cout << "\n\n";
 		    }
 		    
@@ -292,7 +292,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
                 for(k=0; k<nren; k++){
 			        cout << setw(15) << ener[k] ;
 			    }
-                cout << setw(15) << enert[1] / nstep / fac ; // average temp
+                cout << setw(15) << ener[1] / fac ; // xxx average temp
                 cout <<"\n";
             }
 
