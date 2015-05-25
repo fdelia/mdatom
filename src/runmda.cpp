@@ -139,12 +139,33 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
 	        }
         }
 
-        double pres0 = nat3 * temp0 * 8.314 / vol; // xxx ???
+        // double pres0 = nat * temp0 * 8.314/1000 / vol; // xxx ???
+        double pres0 = nat * temp0 * 8.314 / vol; // xxx 
+        // pres0 = 2;
 
         *temp = ener[1]/fac;
         cout << "\n\n INITIAL TEMPERATURE IS :\n\n " << *temp << "\n";
+
+        cout << "\n\n INITIAL PRESSURE IS : \n\n " << pres0 << "\n"; // xxx
 /* dynamics step */
         for(nstep=0; nstep<nstlim; nstep++) {
+
+            // 6.6.3 xxx 
+
+            if (ntt==4){
+                volScal = cbrt((double) 1 + betat*dt/taup * (pres - pres0)); // cube root
+                // if (volScal>2) volScal=2;
+                // volScal=1;
+
+                vol *= pow(volScal,3);
+                box[0] *= volScal;
+                box[1] *= volScal;
+                box[2] *= volScal;
+
+                for (j3=0; j3<nat3; j3++)
+                    x[j3] *= volScal;
+            }
+
 
 /* put atoms in central periodic box */
             shia(nat, x, box, xmin);
@@ -156,9 +177,6 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
  */
 
             // 6.6.2 xxx
-            // TODO: add asserts in main.cpp for input params
-
-            // double gamma=1;
 
             if (ntt==3)
                 langevin(nat, x, box, epslj, siglj, rcutf, &epot, f, &vir, rcutg, ngr, igr,
@@ -175,20 +193,6 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
 
 
 
-            // 6.6.3 xxx 
-
-            if (ntt==4){
-                // cout << "******** " << ((double) 1 + betat*dt/taup * (pres - pres0)) << "\n";
-                // cout << "*** dt: "<< dt<<"\n";
-                // cout << "*** scal: " << cbrt((double) 1 + betat*dt/taup * (pres - pres0)) << "\n";
-                volScal = cbrt((double) 1 + betat*dt/taup * (pres - pres0)); // cube root
-                cout << "*** volScal: " << volScal;
-                vol *= volScal;
-                box[0] *= volScal;
-                box[1] *= volScal;
-                box[2] *= volScal;
-            }
-
 
 /* perform leap-frog integration step,
  * calculate kinetic energy at time t-dt/2 and at time t,
@@ -202,7 +206,6 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
                 eold  += vn*vn;
                 enew  += (vh+vn)*(vh+vn);
                 v[j3]  = vn;
-                x[j3] *= volScal; // xxx
                 x[j3] += vn*dt;
             }
             eold *= (amas/2.);
@@ -224,15 +227,11 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
 
                 // time since last collision
                 double tSinceColl = dt*nstep - lastcoll;
-                // double sd = sqrt(boltz*temp0/amas)/3; // sd war zu gross, darum /3
                 double sd = dtcoll/4;
                 double t_rand = gauss(dtcoll, sd, &ig);
 
-
                 // collide
                 if (t_rand < tSinceColl){
-                    // cout << "\n**********************\n";
-                    // cout << "collision at step " << nstep << " \n";
 
                     int numOfColls = 1; // to implement (input)
 
@@ -288,7 +287,7 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
                 cout << setw(15) << "VIRIAL";
                 cout << setw(15) << "PRESSURE";
                 cout << setw(15) << "SCALE-T";
-                cout << setw(15) << "ENERGY";
+                cout << setw(15) << "TEMP";
                 cout << "\n\n";
 		    }
 		    
@@ -334,7 +333,6 @@ void runmda(int nat, double x[], double v[], double f[], double amas,
         cout << setw(15) << "VIRIAL";
         cout << setw(15) << "PRESSURE";
         cout << setw(15) << "SCALE-T";
-        //cout << setw(15) << "Current Temp";
 	    cout << "\n\n";	 
 	
         cout.setf(ios::right);
